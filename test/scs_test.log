@@ -1,7 +1,0 @@
-I, [2009-02-10T08:28:36.686101 #23803]  INFO -- : SCS HIT "/scs/nextsong" [:scs, :nextsong] {:colid=>"7273635", :serendipity=>"0", :userid=>"1806155"}
-I, [2009-02-10T08:28:36.688397 #23803]  INFO -- : Song info => {"reco"=>false, "fav"=>true, "valid"=>true, "song_id"=>4639519} Run Time => 0.00235486030578613
-I, [2009-02-10T08:28:36.743457 #23839]  INFO -- : SCS HIT "/scs/nextsong" [:scs, :nextsong] {:colid=>"7116565", :transid=>"de5a2dc99e7cb2513aa186b3f50ee02a", :serendipity=>"0"}
-I, [2009-02-10T08:28:36.747555 #23839]  INFO -- : Song info => {"reco"=>false, "fav"=>false, "valid"=>true, "song_id"=>63651} Run Time => 0.00415205955505371
-I, [2009-02-10T08:28:39.103973 #23819]  INFO -- : SCS HIT "/scs/nextsong" [:scs, :nextsong] {:colid=>"1783867", :transid=>"6e80b5967c4abda45c8819de536592cb", :serendipity=>"0"}
-I, [2009-02-10T08:28:39.107796 #23819]  INFO -- : Song info => {"reco"=>false, "fav"=>false, "valid"=>true, "song_id"=>4957168} Run Time => 0.00388407707214355
-I, [2009-02-10T08:28:39.394141 #23828]  INFO -- : SCS HIT "/scs/nextsong" [:scs, :nextsong] {:colid=>"2463735", :transid=>"c4256e8ad510bef2e2764ca312725b7c", :serendipity=>"0"}
