@@ -1,0 +1,4 @@
+Feb 10 20:53:20 dido rails[4650]: Processing PlayerController#notify (for 76.167.179.150 at 2009-02-10 20:53:20) [GET]
+Feb 10 20:53:20 dido rails[4650]: Session ID: BAh7BzoXbGFzdF9sb2FkZWRfc3NkX2lkaQPZ7uYiCmZsYXNoSUM6J0FjdGlv%0AbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA%3D--cd30d00a7fe2a7e348eebb0caaca0ae65f34b0ce
+Feb 10 20:53:20 dido rails[4650]: Parameters: {"songcollection_id"=>"2132257", "event"=>"play_start", "action"=>"notify", "controller"=>"player", "play_page"=>"http:%2F%2Fwww.nutsie.com%2Fflash%2FNutsie.swf?host_url=http:%2F%2Fsidebar-api.nutsie.com%2Fplay%2F2132257%
+2Fsession%2Fe9f0735434a2fea82301cf4af56db3ea&login_ur", "song_id"=>"7095914"}

@@ -1,0 +1,8 @@
+02-10-2009 Added CrazyLogger::LogFile to handle dates* (need to change Rails log format to have year in the date)
+
+Added to git
+Added Crazylogger Server
+Added CrazyTime to format strings into dates
+Added Record a prototype ORM
+Added Record::Writer
+Added Record::Sequal

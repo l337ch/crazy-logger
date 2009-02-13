@@ -1,0 +1,4 @@
+66.249.70.212 - - [10/Feb/2009:20:55:09 -0800] "GET /mobile HTTP/1.1" 200 3885 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+66.249.70.212 - - [10/Feb/2009:20:55:09 -0800] "GET /song/Blues%20for%20Willareen/4370687?album_id=4370691&artist_id=1001707 HTTP/1.1" 200 4648 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+72.30.87.95 - - [10/Feb/2009:20:55:09 -0800] "GET /playlist/Russell%20Gunn%20%20-%20Mood%20Swings/1188157 HTTP/1.0" 200 14202 "-" "Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)"
+72.30.87.95 - - [10/Feb/2009:20:55:11 -0800] "GET /playlist/Rednex%20-%20Sex%20%26%2338;%20Violins/3633825 HTTP/1.0" 200 80986 "-" "Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)"
