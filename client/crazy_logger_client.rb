@@ -176,71 +176,70 @@ module CrazyLogger
       end
     end
   end
-end
     
-module CrazyCtl
+  class CrazyCtl
   
-  def self.handle_signals(io_pos)
-    # termination signal
-    Signal.trap("TERM") {terminate}
-    # reload signal
-    Signal.trap("HUP")  {reload}
-  end
-  
-  def self.terminate(io_pos)
-    # shutdown the program gracefully
-    # save the current read position, no need to worry about setting @io_pos since we're leaving
-    mark_pos(OPTIONS[:tmp], io_pos)
-    exit    # we're outie
-  end
-  
-  def self.reload
-    # reload the program without interuption - not a restart
-    
-  end
-  
-  def self.status
-    return File.exists?(OPTIONS[:pid])
-  end
-
-  def self.start
-    if status
-      puts "#{APP_NAME} is already running"
-    else
-      pidFile = File.new(OPTIONS[:pid], 'w')
-      pid = fork do
-        io_pos = CrazyLogger::TailFile.io_pos(OPTIONS[:tmp])
-        CrazyLogger::TailFile.run(OPTIONS[:file], io_pos)
-      end
-      #Process.detach(pid)
-      pidFile.puts(pid)
-      pidFile.close
+    def self.handle_signals(io_pos)
+      # termination signal
+      Signal.trap("TERM") {terminate}
+      # reload signal
+      Signal.trap("HUP")  {reload}
     end
-  end
   
-  def self.stop
-    if status
-      pidFile = File.open(OPTIONS[:pid], 'r')
-      pidFile.each_line do |pid|
-        pid.chomp!
-        begin
-          Process.kill("TERM", pid.to_i)
-        rescue
-          puts "Unable to kill process #{pid}"
+    def self.terminate(io_pos)
+      # shutdown the program gracefully
+      # save the current read position, no need to worry about setting @io_pos since we're leaving
+      mark_pos(OPTIONS[:tmp], io_pos)
+      exit    # we're outie
+    end
+  
+    def self.reload
+      # reload the program without interuption - not a restart
+    
+    end
+  
+    def self.status
+      return File.exists?(OPTIONS[:pid])
+    end
+
+    def self.start
+      if status
+        puts "#{APP_NAME} is already running"
+      else
+        pidFile = File.new(OPTIONS[:pid], 'w')
+        pid = fork do
+          io_pos = CrazyLogger::TailFile.io_pos(OPTIONS[:tmp])
+          CrazyLogger::TailFile.run(OPTIONS[:file], io_pos)
         end
+        #Process.detach(pid)
+        pidFile.puts(pid)
+        pidFile.close
       end
-      pidFile.close
-      File.delete(OPTIONS[:pid])
-    else
-      puts "#{APP_NAME} is not started"
     end
-  end
   
-  def self.reload
+    def self.stop
+      if status
+        pidFile = File.open(OPTIONS[:pid], 'r')
+        pidFile.each_line do |pid|
+          pid.chomp!
+          begin
+            Process.kill("TERM", pid.to_i)
+          rescue
+            puts "Unable to kill process #{pid}"
+          end
+        end
+        pidFile.close
+        File.delete(OPTIONS[:pid])
+      else
+        puts "#{APP_NAME} is not started"
+      end
+    end
+  
+    def self.reload
     
-  end
+    end
 
-end
+  end
 
 def options
   OptionParser.new do |opts|
@@ -271,6 +270,7 @@ def options
 end
 
 def main
+  include CrazyLogger::CrazyCtl
   options
   
   # make sure product is defined
